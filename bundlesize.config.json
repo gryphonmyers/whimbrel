@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "path": "./dist/whimbrel.esm.min.js",
+      "maxSize": "0.85 kB",
+      "compression": "brotli"
+    },
+    {
+      "path": "./dist/whimbrel.cjs.min.js",
+      "maxSize": "0.85 kB",
+      "compression": "brotli"
+    }
+  ]
+}
