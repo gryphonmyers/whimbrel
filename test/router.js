@@ -1,6 +1,6 @@
-const test = require('ava');
-const { Router } = require('../lib');
-const { route } = require("../lib");
+import test from 'ava';
+import { Router } from '../lib';
+import { route } from "../lib";
 
 test('basic param works', t => {
     t.falsy(route`/hi/there/${{}}/green/man`.regexp.exec('hi'))
