@@ -28,3 +28,7 @@ test('basic routing works', async t => {
 
     t.is(window.location.href, 'http://foo.bar/wiggle/');
 });
+
+test.todo('Test hash update');
+test.todo('Test scroll into view');
+test.todo('Test scroll restoration');
