@@ -9,13 +9,13 @@
     "test": "test"
   },
   "dependencies": {
-    "ava": "^3.5.0"
+    "ava": "^3.5.0",
+    "sinon": "^9.0.2"
   },
   "devDependencies": {
     "bundlesize": "^0.18.0",
     "c8": "^7.1.0",
     "esm": "^3.2.25",
-    "history": "^4.10.1",
     "jsdom": "^16.2.2",
     "rollup": "^2.7.2",
     "rollup-plugin-terser": "^5.3.0"
