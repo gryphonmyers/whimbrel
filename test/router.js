@@ -227,3 +227,5 @@ test('Matching nested router returns nested array', async t => {
 test.todo('Test rejection functionality')
 
 test.todo('Test onResolve callback')
+test.todo('Reverse link compilation')
+test.todo('Verify onResolve of nested router')

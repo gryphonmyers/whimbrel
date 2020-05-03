@@ -10,18 +10,21 @@ test('basic routing works', async t => {
     const Router = createHistoryRouter(window);
     let resolved;
 
-    await new Promise((resolve) => {
-        new Router({onResolve: (result) => {
+    const router = new Router({
+        onResolve: (result) => {
             resolved = result;
-            resolve();
-        }})
-        .get(route`/wiggle/`, (ctx, {resolve}) => {
-            ctx.boo = 'boy';
-            resolve();
-        });
-
-        window.document.querySelector('a').click();
+        }
+    })
+    .get(route`/wiggle/`, (ctx, {resolve}) => {
+        ctx.boo = 'boy';
+        resolve();
     });
-    
+
+
+    window.document.querySelector('a').click();
+
+    await router.routingPromise;    
     t.deepEqual(resolved, {boo: 'boy'});
+
+    t.is(window.location.href, 'http://foo.bar/wiggle/');
 });
