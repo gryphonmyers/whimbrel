@@ -21,7 +21,6 @@ test('basic routing works', async t => {
         resolve();
     });
 
-
     window.document.querySelector('a').click();
 
     await router.routingPromise;    
@@ -118,3 +117,4 @@ test.skip('browser navigation works', async t => {
 test.todo('Test hash update');
 test.todo('Test scroll into view');
 test.todo('Test scroll restoration');
+test.todo('Verify scroll position restoration with latency before routing')
