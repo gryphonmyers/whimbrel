@@ -2,8 +2,12 @@
   "name": "whimbrel",
   "version": "0.1.0",
   "description": "Small router",
-  "main": "dist/whimbrel.cjs.js",
-  "module": "dist/whimbrel.esm.min.js",
+  "main": "./dist/whimbrel.cjs.js",
+  "module": "./dist/whimbrel.esm.js",
+  "browser": {
+    "./dist/whimbrel.cjs.js": "./dist/whimbrel-dom.cjs.js",
+    "./dist/whimbrel.esm.js": "./dist/whimbrel-dom.esm.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -22,9 +26,9 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "bundlesize": "bundlesize",
+    "bundlesize": "npm run build && bundlesize",
     "dev": "rollup -c rollup.config.js --watch",
-    "test": "c8 --reporter=html --reporter=text --check-coverage --lines 80 ava test/history.js"
+    "test": "c8 --reporter=html --reporter=text --check-coverage --lines 80 ava test/*.js && npm run bundlesize"
   },
   "files": [
     "dist",

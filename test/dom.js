@@ -1,5 +1,5 @@
 import test from 'ava';
-import createHistoryRouter from "../lib/create-history-router";
+import createDomRouter from "../lib/create-dom-router-class.js";
 import { route } from '../lib';
 
 const { JSDOM } = require("jsdom");
@@ -8,7 +8,7 @@ const sinon = require('sinon');
 test('basic routing works', async t => {
     const { window } = new JSDOM(`<!DOCTYPE html><p><a href="/wiggle/">Hello world</a></p>`, {url: 'http://foo.bar'});
 
-    const Router = createHistoryRouter(window);
+    const Router = createDomRouter(window);
     let resolved;
 
     const router = new Router({
@@ -32,7 +32,7 @@ test('basic routing works', async t => {
 test('routing abortion works', async t => {
     const { window } = new JSDOM(`<!DOCTYPE html><p><a href="/wiggle/">link</a><p><a href="/wiggler/">link</a></p>`, {url: 'http://foo.bar'});
 
-    const Router = createHistoryRouter(window);
+    const Router = createDomRouter(window);
     let resolved;
 
     const router = new Router({
@@ -69,7 +69,7 @@ test.skip('browser navigation works', async t => {
     const { window } = new JSDOM(`<!DOCTYPE html><p><a href="/wiggle/">link</a><p><a href="/wiggler/">link</a></p>`, {url: 'http://foo.bar'});
     const sandbox = sinon.createSandbox();
     sandbox.spy(window.history, 'pushState');
-    const Router = createHistoryRouter(window);
+    const Router = createDomRouter(window);
     let resolved;
 
     //@TODO get popstate event firing

@@ -2,12 +2,22 @@
   "files": [
     {
       "path": "./dist/whimbrel.esm.min.js",
-      "maxSize": "0.85 kB",
+      "maxSize": "1 kB",
       "compression": "brotli"
     },
     {
       "path": "./dist/whimbrel.cjs.min.js",
-      "maxSize": "0.85 kB",
+      "maxSize": "1 kB",
+      "compression": "brotli"
+    },
+    {
+      "path": "./dist/whimbrel-dom.esm.min.js",
+      "maxSize": "1.5 kB",
+      "compression": "brotli"
+    },
+    {
+      "path": "./dist/whimbrel-dom.cjs.min.js",
+      "maxSize": "1.5 kB",
       "compression": "brotli"
     }
   ]

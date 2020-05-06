@@ -26,4 +26,33 @@ export default [{
       plugins: [terser()],
       format: 'esm'
     }
+},
+{
+  input: './lib/dom.js',
+  output: {
+    file: 'dist/whimbrel-dom.esm.min.js',
+    plugins: [terser()],
+    format: 'esm'
+  }
+},{
+  input: './lib/dom.js',
+  output: {
+    file: 'dist/whimbrel-dom.cjs.min.js',
+    plugins: [terser()],
+    format: 'cjs'
+  }
+},{
+  input: './lib/dom.js',
+  output: {
+    file: 'dist/whimbrel-dom.esm.js',
+    plugins: [],
+    format: 'esm'
+  }
+},{
+  input: './lib/dom.js',
+  output: {
+    file: 'dist/whimbrel-dom.cjs.js',
+    plugins: [],
+    format: 'cjs'
+  }
 }];
